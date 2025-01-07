@@ -1,0 +1,54 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Crear una cita nueva</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-input 
+        minlength="5"
+        #citaaInput= "ngModel"
+        required="required" 
+        [(ngModel)]="cita.citaa" 
+        required 
+        label="Cita">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input 
+        minlength="2"
+        #autorInput= "ngModel"
+        [(ngModel)]="cita.autor" 
+        required="required"  
+        label="Autor" 
+        placeholder="Mahatma Gandhi">
+      </ion-input>
+    </ion-item>
+  </ion-card-content>
+  <table>
+  <td>
+  <ion-button 
+    [disabled]="!autorInput.valid || !citaaInput.valid"
+    fill="clear" 
+    (click)="agregarProducto()">
+    Agregar +
+  </ion-button>
+  </td>
+  <td>
+    <tr><ion-item>
+      <ion-text 
+      [hidden]="autorInput.valid || autorInput.pristine"
+      color="danger"
+      >Autor debe tener mas de 2 caracteres
+      </ion-text>
+    </ion-item></tr>
+    <tr><ion-item>
+      <ion-text 
+      [hidden]="citaaInput.valid || citaaInput.pristine"
+      color="danger"
+      >Cita debe tener mas de 5 caracteres
+      </ion-text>
+    </ion-item></tr>
+    
+  </td>
+</table>
+</ion-card>

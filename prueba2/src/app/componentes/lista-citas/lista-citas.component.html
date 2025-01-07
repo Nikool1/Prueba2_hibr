@@ -1,0 +1,25 @@
+<ion-list>
+    <ion-card *ngFor="let c of cita">
+        <ion-card-content>
+            <td>
+            {{c.citaa}}
+            <ion-item>
+                <ion-label slot="end" class="subtitulo">
+                    <li>{{c.autor}} </li>
+                </ion-label>
+            </ion-item>
+        </td>
+        <td>
+            <tr></tr>
+            <tr>
+            <ion-button fill="clear" slot="end" (click)="eliminarCita(c)">
+                <ion-icon src="assets/icon/trash-outline.svg" slot="icon-only"></ion-icon>
+            </ion-button>
+            </tr>
+        </td>
+        </ion-card-content>
+    </ion-card>
+</ion-list>
+
+
+
